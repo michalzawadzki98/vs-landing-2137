@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocaSmart - Learn English Words</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom colors configuration for the yellow and teal brand colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-yellow': '#FFD60A',
+                        'brand-teal': '#51E0DD'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-gray-900/95 p-4 sticky top-0 backdrop-blur-sm z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <img src="logo.svg" alt="VocaSmart" class="h-8">
+            <button class="bg-brand-teal text-[#2D2D39] px-4 py-2 rounded-lg font-semibold">Rozpocznij Naukę</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-900 text-white pt-8">
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between">
+            <div class="md:w-1/2 relative">
+                <div class="bg-brand-yellow rounded-full w-72 h-72 absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                <img src="img/hand-holding-phone.png" alt="Hand holding phone" class="relative z-10 max-w-sm mx-auto md:mb-0">
+            </div>
+            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4">
+                    Ucz się słówek po angielsku,<br>
+                    na dowolne tematy 🇬🇧
+                </h1>
+                <div class="space-x-4">
+                    <div class="bg-gray-700 text-white px-6 py-2 rounded-lg inline-flex items-center">
+                        <span class="mr-2">🎯</span>
+                        <span class="text-animation" id="changing-text">Zaloguj kolejkę na koncert</span>
+                    </div>
+                </div>
+                <script>
+                    const texts = [
+                        "Zaloguj kolejkę na koncert",
+                        "Ucz się angielskiego efektywnie", 
+                        "Rozwijaj swoje słownictwo",
+                        "Osiągaj lepsze wyniki"
+                    ];
+                    let currentIndex = 0;
+                    const textElement = document.getElementById('changing-text');
+                    
+                    setInterval(() => {
+                        textElement.style.opacity = '0';
+                        setTimeout(() => {
+                            currentIndex = (currentIndex + 1) % texts.length;
+                            textElement.textContent = texts[currentIndex];
+                            textElement.style.opacity = '1';
+                        }, 300);
+                    }, 3000);
+                </script>
+                <style>
+                    .text-animation {
+                        transition: opacity 0.3s ease-in-out;
+                    }
+                </style>
+                <div class="mt-6 space-x-4">
+                    <button class="bg-brand-teal text-[#2D2D39] px-6 py-2 rounded-lg font-semibold">Rozpocznij Naukę</button>
+                    <button class="bg-gray-800 text-white px-6 py-2 rounded-lg font-semibold">Masz już konto</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-12">
+            <!-- Feature 1 -->
+            <div class="text-center md:text-left">
+                <div class="bg-gray-900 w-full aspect-square rounded-lg mb-6"></div>
+                <h2 class="text-xl font-bold mb-2">Ucz się na temat, który naprawdę Cię interesuje - za darmo.</h2>
+                <p class="text-gray-600">Potrzebujesz słówek na wakacje w USA? A może interesujesz się technologią? Stworzymy Twoją własną listę słówek w kilka sekund!</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="text-center md:text-left">
+                <div class="bg-gray-900 w-full aspect-square rounded-lg mb-6"></div>
+                <h2 class="text-xl font-bold mb-2">Powtarzaj mądrze dzięki algorytmowi zapamiętywania.</h2>
+                <p class="text-gray-600">VocaSmart wie, które słówka sprawiają Ci trudność, i pokazuje je częściej. Ucz się efektywnie i pamiętaj na długo!</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="text-center md:text-left">
+                <div class="bg-gray-900 w-full aspect-square rounded-lg mb-6"></div>
+                <h2 class="text-xl font-bold mb-2">Dla początkujących i zaawansowanych.</h2>
+                <p class="text-gray-600">VocaSmart dobierze słówka dopasowane do Twoich potrzeb i poziomu znajomości języka.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-8">Pobierz i zacznij naukę już teraz!</h2>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="inline-block">
+                    <img src="google-play-badge.png" alt="Get it on Google Play" class="h-12">
+                </a>
+                <a href="#" class="inline-block">
+                    <img src="app-store-badge.png" alt="Download on the App Store" class="h-12">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-4">
+            <!-- Add footer content here if needed -->
+        </div>
+    </footer>
+</body>
+</html>
