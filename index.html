@@ -21,16 +21,16 @@
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-gray-900/95 p-4 sticky top-0 backdrop-blur-sm z-50">
+    <nav class="bg-gray-900 p-4 sticky top-0 backdrop-blur-sm z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <img src="logo.svg" alt="VocaSmart" class="h-8">
-            <button class="bg-brand-teal text-[#2D2D39] px-4 py-2 rounded-lg font-semibold">Rozpocznij Naukę</button>
-        </div>
+            <img src="/img/logo-voca.svg" alt="VocaSmart" class="h-8">
+            <button class="bg-brand-teal text-[#2D2D39] px-8 py-3 rounded-full font-semibold">Rozpocznij naukę</button>
+        </div>  
     </nav>
 
     <!-- Hero Section -->
-    <section class="bg-gray-900 text-white pt-8">
-        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between">
+    <section class="bg-gray-900 text-white">
+        <div class="container mx-auto pt-6 px-4 flex flex-col-reverse md:flex-row items-center justify-between">
             <div class="md:w-1/2 relative">
                 <div class="bg-brand-yellow rounded-full w-72 h-72 absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                 <img src="img/hand-holding-phone.png" alt="Hand holding phone" class="relative z-10 max-w-sm mx-auto md:mb-0">
@@ -41,29 +41,54 @@
                     na dowolne tematy 🇬🇧
                 </h1>
                 <div class="space-x-4">
-                    <div class="bg-gray-700 text-white px-6 py-2 rounded-lg inline-flex items-center">
-                        <span class="mr-2">🎯</span>
+                    <div class="border-white/20 border text-white px-6 py-2 rounded-lg inline-flex items-center">
                         <span class="text-animation" id="changing-text">Zaloguj kolejkę na koncert</span>
                     </div>
                 </div>
                 <script>
                     const texts = [
-                        "Zaloguj kolejkę na koncert",
-                        "Ucz się angielskiego efektywnie", 
-                        "Rozwijaj swoje słownictwo",
-                        "Osiągaj lepsze wyniki"
+                        "🍴  Rozmowa w restauracji",
+                        "🏨  Czy to moje łóżko? – przygody w hotelu", 
+                        "🌴  Planowanie wakacji marzeń",
+                        "🖼️  Opowiadanie o ulubionym obrazie",
+                        "🎸  Koncert w domu – przygody z muzyką",
+                        "🐕  Opis ulubionego zwierzaka",
+                        "🏖️  Poproszę parasol! – rozmowa na plaży",
+                        "🏆  Kto wygrał? – rozmowa po meczu",
+                        "🍟  Proszę o frytki na wynos!",
+                        "🆘  Co robić w razie wypadku? – zwroty w pierwszej pomocy",
+                        "🎓  Jak zdać egzamin? – przygotowanie do testów",
+                        "🦷  Jak zapytać o termin wizyty u dentysty?",
+                        "💼  Rozmowa z przełożonym w pracy",
+                        "📅  Planowanie spotkania biznesowego",
+                        "🚉  Zapytanie o rozkład jazdy na dworcu",
+                        "🏴‍☠️  Piracka mapa – jak opisać miejsce ukrycia skarbu?",
+                        "✉️  Zwroty potrzebne w oficjalnej korespondencji",
+                        "🏢  Praca w biurze – rozmowa z kolegą",
+                        "🌍  Eko-słówka – rozmowa o środowisku"
                     ];
-                    let currentIndex = 0;
                     const textElement = document.getElementById('changing-text');
+                    
+                    function getRandomIndex(max) {
+                        return Math.floor(Math.random() * max);
+                    }
+
+                    // Set initial random text
+                    let currentIndex = getRandomIndex(texts.length);
+                    textElement.textContent = texts[currentIndex];
                     
                     setInterval(() => {
                         textElement.style.opacity = '0';
                         setTimeout(() => {
-                            currentIndex = (currentIndex + 1) % texts.length;
+                            let newIndex;
+                            do {
+                                newIndex = getRandomIndex(texts.length);
+                            } while (newIndex === currentIndex); // Ensure we don't show the same text twice
+                            currentIndex = newIndex;
                             textElement.textContent = texts[currentIndex];
                             textElement.style.opacity = '1';
                         }, 300);
-                    }, 3000);
+                    }, 2500);
                 </script>
                 <style>
                     .text-animation {
@@ -71,8 +96,8 @@
                     }
                 </style>
                 <div class="mt-6 space-x-4">
-                    <button class="bg-brand-teal text-[#2D2D39] px-6 py-2 rounded-lg font-semibold">Rozpocznij Naukę</button>
-                    <button class="bg-gray-800 text-white px-6 py-2 rounded-lg font-semibold">Masz już konto</button>
+                    <button class="bg-brand-teal text-[#2D2D39] px-8 py-3 rounded-full font-semibold">Rozpocznij naukę</button>
+                    <button class="text-[#51E0DD] px-8 py-3 rounded-full font-semibold border border-[#6C7A79]">Mam już konto</button>
                 </div>
             </div>
         </div>
