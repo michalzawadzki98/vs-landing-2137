@@ -148,25 +148,25 @@
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section class="py-12 md:py-20 bg-gray-100">
-        <div class="container max-w-[1140px] mx-auto px-4 text-center">
-            <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Pobierz i zacznij naukę już teraz!</h2>
-            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
-                <a href="#" class="inline-block">
-                    <img src="google-play-badge.png" alt="Get it on Google Play" class="h-10 md:h-12">
-                </a>
-                <a href="#" class="inline-block">
-                    <img src="app-store-badge.png" alt="Download on the App Store" class="h-10 md:h-12">
-                </a>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-10">
         <div class="container max-w-[1140px] mx-auto px-4">
-            <!-- Add footer content here if needed -->
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
+                <a href="#" class="inline-block">
+                    <img src="img/google-play-button.svg" alt="Pobierz z Google Play" class="h-48 md:h-48">
+                </a>
+                <a href="#" class="inline-block">
+                    <img src="img/app-store-button.svg" alt="Pobierz z App Store" class="h-48 md:h-48">
+                </a>
+            </div>
+            <!-- Add copyright section -->
+            <div class="mt-8 text-center border-t border-gray-800 pt-6">
+                <p class="text-gray-400 text-sm">
+                    © 2024 VocaSmart. Wszelkie prawa zastrzeżone.<br class="md:hidden">
+                    <span class="hidden md:inline"> • </span>Polityka prywatności • Warunki korzystania
+                </p>
+            </div>
         </div>
     </footer>
 
@@ -189,6 +189,9 @@
         
         // Add scroll event listener
         window.addEventListener('scroll', checkScroll);
+
+        // Update copyright year automatically
+        document.querySelector('footer').innerHTML = document.querySelector('footer').innerHTML.replace('2024', new Date().getFullYear());
     </script>
 </body>
 </html>
