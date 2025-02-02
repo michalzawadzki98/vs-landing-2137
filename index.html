@@ -6,6 +6,8 @@
     <title>VocaSmart - Fiszki do nauki angielskiego</title>
     <link rel="icon" type="image/png" href="img/vs-sygnet.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Lottie Player script -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Custom colors configuration for the yellow and teal brand colors -->
     <script>
         tailwind.config = {
@@ -140,35 +142,57 @@
             </div>
         </div>
     </section>
-
     <!-- Features Section -->
     <section class="py-12 md:py-20">
-        <div class="container max-w-[1140px] mx-auto px-4 grid md:grid-cols-3 gap-8 md:gap-12">
-            <!-- Feature 1 -->
-            <div class="text-center md:text-left group">
-                <div class="bg-gray-900 w-full aspect-square rounded-lg mb-4 md:mb-6 relative overflow-hidden">
-                    <img src="img/feature-1.png" alt="Feature 1" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105">
+        <div class="container max-w-[1140px] mx-auto px-4">
+            <div class="flex flex-col gap-16">
+                <!-- Feature 1 -->
+                <div class="group grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <h2 class="text-2xl font-semibold mb-4">Ucz się na temat, który naprawdę Cię interesuje - <strong>za darmo</strong></h2>
+                        <p class="text-gray-600 text-lg">Potrzebujesz słówek na wakacje w USA? A może interesujesz się technologią? Stworzymy Twoją własną listę słówek w kilka sekund!</p>
+                    </div>
+                    <div class="bg-gray-900 w-full aspect-[4/3] rounded-lg relative overflow-hidden order-1 md:order-2">
+                        <lottie-player 
+                            src="img/feature-1-lottie.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 100%; height: 100%;"
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                    </div>
                 </div>
-                <h2 class="text-lg md:text-xl font-semibold mb-2">Ucz się na temat, który naprawdę Cię interesuje - <strong>za darmo</strong></h2>
-                <p class="text-gray-600 text-sm md:text-base">Potrzebujesz słówek na wakacje w USA? A może interesujesz się technologią? Stworzymy Twoją własną listę słówek w kilka sekund!</p>
-            </div>
 
-            <!-- Feature 2 -->
-            <div class="text-center md:text-left group">
-                <div class="bg-gray-900 w-full aspect-square rounded-lg mb-4 md:mb-6 relative overflow-hidden">
-                    <img src="img/feature-2.png" alt="Feature 2" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105">
+                <!-- Feature 2 -->
+                <div class="group grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <h2 class="text-2xl font-semibold mb-4"><strong>Powtarzaj mądrze</strong> dzięki algorytmowi zapamiętywania.</h2>
+                        <p class="text-gray-600 text-lg">VocaSmart wie, które słówka sprawiają Ci trudność, i pokazuje je częściej. Ucz się efektywnie i pamiętaj na długo!</p>
+                    </div>
+                    <div class="bg-gray-900 w-full aspect-[4/3] rounded-lg relative overflow-hidden order-1 md:order-2">
+                        <img src="img/feature-2.png" alt="Feature 2" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105">
+                    </div>
                 </div>
-                <h2 class="text-lg md:text-xl font-semibold mb-2"><strong>Powtarzaj mądrze</strong> dzięki algorytmowi zapamiętywania.</h2>
-                <p class="text-gray-600 text-sm md:text-base">VocaSmart wie, które słówka sprawiają Ci trudność, i pokazuje je częściej. Ucz się efektywnie i pamiętaj na długo!</p>
-            </div>
 
-            <!-- Feature 3 -->
-            <div class="text-center md:text-left group">
-                <div class="bg-gray-900 w-full aspect-square rounded-lg mb-4 md:mb-6 relative overflow-hidden">
-                    <img src="img/feature-3.png" alt="Feature 3" class="w-full h-full object-cover rounded-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-105">
+
+                <!-- Feature 3 -->
+                <div class="group grid md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1">
+                        <h2 class="text-2xl font-semibold mb-4">Dla początkujących i zaawansowanych.</h2>
+                        <p class="text-gray-600 text-lg">VocaSmart dobierze słówka dopasowane do Twoich potrzeb i poziomu znajomości języka.</p>
+                    </div>
+                    <div class="bg-gray-900 w-full aspect-[4/3] rounded-lg relative overflow-hidden order-1 md:order-2">
+                        <lottie-player 
+                            src="img/feature-3-lottie.json" 
+                            background="transparent" 
+                            speed="1" 
+                            style="width: 100%; height: 100%;"
+                            loop 
+                            autoplay>
+                        </lottie-player>
+                     </div>
                 </div>
-                <h2 class="text-lg md:text-xl font-semibold mb-2">Dla początkujących i zaawansowanych.</h2>
-                <p class="text-gray-600 text-sm md:text-base">VocaSmart dobierze słówka dopasowane do Twoich potrzeb i poziomu znajomości języka.</p>
             </div>
         </div>
     </section>
